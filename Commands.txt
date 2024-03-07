@@ -1,0 +1,17 @@
+az login
+kubectl get namespaces
+kubectl get nodes -n app-dev
+kubectl get pods -n app-dev
+kubectl describe <pod-name> -n app-dev
+kubectl logs -f <pod-name> -n app-dev
+
+kubectl delete pods l <pod-name> -n app-dev
+kubectl get deployments
+
+az login --tenant <TenantID>
+az login --use-device-code
+
+winget install Dapr.CLI
+powershell -Command "iwr -useb https://raw.githubusercontent.com/dapr/cli/master/install/install.ps1 | iex"
+dapr init
+dapr run --app-id myapp --app-port 5000 -- dotnet run
